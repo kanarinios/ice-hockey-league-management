@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   get 'home/index'
 
   root 'home#index'
-  after_sign_out_path_for root
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

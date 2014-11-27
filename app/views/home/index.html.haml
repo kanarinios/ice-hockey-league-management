@@ -1,8 +1,1 @@
-%nav.navbar.navbar-default
-  .container-fluid
-    .navbar-header
-    - if user_signed_in?
-      = current_user.first_name
-      = link_to('Sign out', destroy_user_session_path, :method => :delete, class: "button btn btn-default navbar-btn")
-    -else
-      = link_to('Sign in', new_user_session_path, class: "button btn btn-default navbar-btn")
+= render "navigation"

@@ -1,0 +1,18 @@
+%nav.navbar.navbar-default
+  .container-fluid.main-navigation
+    .navbar-header
+      - if user_signed_in?
+        .btn-group
+          %button.btn.btn-default.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :type => "button"}
+            = current_user.first_name
+            %span.caret
+          %ul.dropdown-menu.dropdown-menu-right{:role => "menu"}
+            %li
+              %a{:href => "#"} Action
+            %li
+              %a{:href => "#"} Another action
+            %li
+              %a{:href => "#"} Something else here
+        = link_to('Sign out', destroy_user_session_path, :method => :delete, class: "button btn btn-primary navbar-btn")
+      -else
+        = link_to('Sign in', new_user_session_path, class: "button btn btn-default navbar-btn")
