@@ -24,7 +24,6 @@ end
 group :development do
   gem 'spring'
   gem 'erb2haml'
-  gem 'rails_layout'
 
 end
 
