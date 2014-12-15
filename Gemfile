@@ -15,6 +15,8 @@ gem 'bootstrap-sass', '~> 3.3.1'
 gem 'autoprefixer-rails'
 gem 'devise'
 gem 'cancancan'
+gem 'simple_form'
+gem 'devise-bootstrap-views'
 
 group :production do
 end
@@ -22,6 +24,7 @@ end
 group :development do
   gem 'spring'
   gem 'erb2haml'
+  gem 'rails_layout'
 
 end
 
