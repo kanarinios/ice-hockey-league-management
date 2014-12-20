@@ -1,19 +1,21 @@
 %nav.navbar.navbar-default
-  %h4.title= t('.app_title')
   .container-fluid.main-navigation
     .navbar-header
-      - if user_signed_in?
-        .btn-group
-          %button.btn.btn-default.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :type => "button"}
-            = current_user.first_name
-            %span.caret
-          %ul.dropdown-menu.dropdown-menu-right{:role => "menu"}
-            %li
-              %a{:href => "#"} Action
-            %li
-              %a{:href => "#"} Another action
-            %li
-              %a{:href => "#"} Something else here
-        = link_to('Sign out', destroy_user_session_path, :method => :delete, class: "button btn btn-primary navbar-btn")
-      -else
-        = link_to('Sign in', new_user_session_path, class: "button btn btn-default navbar-btn")
+      %h4.title= t('.app_title')
+    - if current_user.present?
+      = render "menu_navbar"
+    - if user_signed_in?
+      .btn-group
+        %button.btn.btn-default.dropdown-toggle.navbar-btn.user-btn{"aria-expanded" => "false", "data-toggle" => "dropdown", :type => "button"}
+          = current_user.first_name
+          %span.caret
+        %ul.dropdown-menu.dropdown-menu-right{:role => "menu"}
+          %li
+            %a{:href => "#"} Action
+          %li
+            %a{:href => "#"} Another action
+          %li
+            %a{:href => "#"} Something else here
+        = link_to('Sign out', destroy_user_session_path, :method => :delete, class: "button btn btn-primary navbar-btn user-btn")
+    -else
+      = link_to('Sign in', new_user_session_path, class: "button btn btn-default navbar-btn")
