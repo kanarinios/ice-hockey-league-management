@@ -1,4 +1,17 @@
 pl:
+  layouts:
+    menu:
+      table: Tabela
+      timetable: Terminarz
+      teams: Drużyny
+      players: Zawodnicy
+      statistics: Statystyki
   home:
     navigation:
       app_title: IHLM
+  teams:
+    index:
+      add_team: Dodaj drużynę
+      edit: Edytuj
+      destroy: Usuń
+      confirmation: Jestes pewien że chcesz usunąć drużynę?

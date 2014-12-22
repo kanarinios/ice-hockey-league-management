@@ -3,8 +3,7 @@
     .navbar-header
       .home-image
         = link_to image_tag("home.png"), root_path
-    - if current_user.present?
-      = render "menu_navbar"
+    = render "layouts/menu"
     .btn-group
       - if user_signed_in?
         %button.btn.btn-default.dropdown-toggle.navbar-btn.user-btn{"aria-expanded" => "false", "data-toggle" => "dropdown", :type => "button"}

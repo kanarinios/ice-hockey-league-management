@@ -20,7 +20,16 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  layouts:
+    menu:
+      table: Tabela
+      timetable: Terminarz
+      teams: Drużyny
+      players: Zawodnicy
+      statistics: Statystyki
   home:
     navigation:
-      app_title: Hockey
-
+      app_title: IHLM
+  teams:
+    index:
+      add_team: Dodaj drużynę

@@ -1,0 +1,17 @@
+.menu-nav
+  %ul.nav.nav-pills
+    %li{:role => "presentation",:class => "#{'active' if params[:controller] == 'table'}"}
+      %a{:href => "#"}
+        =t '.table'
+    %li{:role => "presentation", :class => "#{'active' if params[:controller] == 'timetable'}"}
+      %a{:href => "#"}
+        =t '.timetable'
+    %li{:role => "presentation", :class => "#{'active' if params[:controller] == 'teams'}"}
+      %a{:href => "/teams"}
+        =t '.teams'
+    %li{:role => "presentation", :class => "#{'active' if params[:controller] == 'players'}"}
+      %a{:href => "#"}
+        =t '.players'
+    %li{:role => "presentation", :class => "#{'active' if params[:controller] == 'statistics'}"}
+      %a{:href => "#"}
+        =t '.statistics'
