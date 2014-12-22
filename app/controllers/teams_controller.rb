@@ -12,6 +12,10 @@ class TeamsController < ApplicationController
     @team = Team.find(params[:id])
   end
 
+  def show
+    @team = Team.find(params[:id])
+  end
+
   def update
     @team = Team.find(params[:id])
 
@@ -42,6 +46,6 @@ class TeamsController < ApplicationController
   private
 
   def team_attributes
-    params[:team].permit(:name, :description)
+    params[:team].permit(:name, :description, :logo)
   end
 end

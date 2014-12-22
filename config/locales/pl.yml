@@ -11,7 +11,15 @@ pl:
       app_title: IHLM
   teams:
     index:
-      add_team: Dodaj drużynę
+      add_team: Dodaj nową drużynę
       edit: Edytuj
       destroy: Usuń
       confirmation: Jestes pewien że chcesz usunąć drużynę?
+      edit_team: Edytuj drużynę
+      show_team: Informacje o drużynie
+      teams_list: Lista drużyn
+      team_name: Nazwa drużyny
+      logo: Logo
+    form:
+      team_name: Nazwa drużyny
+      team_description: Opis

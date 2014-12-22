@@ -17,6 +17,7 @@ gem 'devise'
 gem 'cancancan'
 gem 'simple_form'
 gem 'devise-bootstrap-views'
+gem "paperclip", "~> 4.2"
 
 group :production do
 end

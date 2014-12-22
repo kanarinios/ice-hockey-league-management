@@ -1,10 +1,18 @@
+%h2.title= t('.teams_list')
 -if can? :create, Team
-  = link_to t('.add_team'), new_team_path
-
-%ul.list-group
-  - @teams.each do |team|
-    %li.list-group-item
-      %h4= team.name
-      -if can? :manage, team
-        = link_to t('.edit'), edit_team_path(team)
-        = link_to t('.destroy'), team_path(team), method: :delete, data: { confirm: t('.confirmation') }
+  = link_to t('.add_team'), new_team_path, class: "btn btn-success add-team"
+- if @teams.present?
+  %table.table
+    %thead
+      %tr
+        %th=t('.logo')
+        %th=t('.team_name')
+        %th=t('.edit')
+        %th=t('.destroy')
+    - @teams.each do |team|
+      %tbody
+        %tr
+          %td= image_tag team.logo.url(:icon)
+          %td= link_to team.name, team_path(team)
+          %td= link_to t('.edit'), edit_team_path(team), class: "btn btn-warning"
+          %td= link_to t('.destroy'), team_path(team), method: :delete, data: { confirm: t('.confirmation') }, class: "btn btn-danger"
