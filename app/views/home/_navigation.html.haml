@@ -1,11 +1,12 @@
 %nav.navbar.navbar-default
   .container-fluid.main-navigation
     .navbar-header
-      %h4.title= t('.app_title')
+      .home-image
+        = link_to image_tag("home.png"), root_path
     - if current_user.present?
       = render "menu_navbar"
-    - if user_signed_in?
-      .btn-group
+    .btn-group
+      - if user_signed_in?
         %button.btn.btn-default.dropdown-toggle.navbar-btn.user-btn{"aria-expanded" => "false", "data-toggle" => "dropdown", :type => "button"}
           = current_user.first_name
           %span.caret
@@ -16,6 +17,6 @@
             %a{:href => "#"} Another action
           %li
             %a{:href => "#"} Something else here
-        = link_to('Sign out', destroy_user_session_path, :method => :delete, class: "button btn btn-primary navbar-btn user-btn")
-    -else
-      = link_to('Sign in', new_user_session_path, class: "button btn btn-default navbar-btn")
+        = link_to('Log out', destroy_user_session_path, :method => :delete, class: "button btn btn-primary navbar-btn user-btn")
+      -else
+        = link_to('Sign in', new_user_session_path, class: "button btn btn-default navbar-btn")
