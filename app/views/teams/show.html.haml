@@ -1,2 +1,10 @@
 %h2.show-team= t('teams.index.show_team')
-= image_tag @team.logo.url
+.team-info
+  = image_tag @team.logo.url(:medium)
+  .team-details
+    = t('.name')
+    %h2= @team.name
+    %br
+    .team-description
+      = t('.description')
+      %h4= @team.description

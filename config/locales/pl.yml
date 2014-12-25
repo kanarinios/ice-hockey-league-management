@@ -23,3 +23,6 @@ pl:
     form:
       team_name: Nazwa drużyny
       team_description: Opis
+    show:
+      name: "Nazwa:"
+      description: "Opis:"
