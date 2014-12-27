@@ -43,3 +43,6 @@ pl:
       home_team: Gospodarz
       away_team: Gość
       date: Data spotkania
+    edit_form:
+      home_team_goals: "Bramki gospodarzy:"
+      away_team_goals: "Bramki gości:"
