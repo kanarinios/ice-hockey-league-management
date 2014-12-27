@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :teams
 
+  resources :matches
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/zpaulovics/datetimepicker-rails.git
+  revision: d0f8a68f30d7ffb34e505845a693df27467424f3
+  branch: master
+  submodules: true
+  specs:
+    datetimepicker-rails (3.1.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -79,7 +87,7 @@ GEM
       haml (>= 4.0.0.rc.1)
       hpricot (~> 0.8.6)
       ruby_parser (~> 3.1.1)
-    i18n (0.6.11)
+    i18n (0.7.0)
     jbuilder (2.2.5)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
@@ -91,7 +99,9 @@ GEM
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
     mime-types (2.4.3)
-    minitest (5.4.3)
+    minitest (5.5.0)
+    momentjs-rails (2.8.3)
+      railties (>= 3.1)
     multi_json (1.10.1)
     orm_adapter (0.5.0)
     paperclip (4.2.0)
@@ -174,7 +184,7 @@ GEM
     shoulda-context (1.2.1)
     shoulda-matchers (2.6.1)
       activesupport (>= 3.0.0)
-    simple_form (3.0.2)
+    simple_form (3.1.0)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
     slop (3.6.0)
@@ -209,6 +219,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.1)
   cancancan
   coffee-rails (~> 4.0.0)
+  datetimepicker-rails!
   devise
   devise-bootstrap-views
   erb2haml
@@ -217,6 +228,7 @@ DEPENDENCIES
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails
+  momentjs-rails (>= 2.8.1)
   paperclip (~> 4.2)
   pg
   pry (~> 0.9.10)
