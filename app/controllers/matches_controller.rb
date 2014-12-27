@@ -45,6 +45,6 @@ class MatchesController < ApplicationController
   private
 
   def match_attributes
-    params[:match].permit(:start_date, :home_team_id, :away_team_id)
+    params[:match].permit(:start_date, :home_team_id, :away_team_id, :home_team_goals, :away_team_goals)
   end
 end

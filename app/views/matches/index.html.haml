@@ -1,5 +1,5 @@
 %h2.title= t('.matches_list')
--if can? :create, Match
+- if can? :create, Match
   = link_to t('.add_match'), new_match_path, class: "btn btn-success add-team"
 - if @matches.present?
   %table.table
@@ -8,7 +8,8 @@
         %th=t('.date')
         %th=t('.home_team')
         %th=t('.away_team')
-        -if can? :edit, Match
+        %th=t('.result')
+        - if can? :edit, Match
           %th=t('.edit')
           %th=t('.destroy')
     - @matches.each do |match|
@@ -17,6 +18,10 @@
           %td= match.start_date
           %td= link_to match.home_team.name, team_path(match.home_team)
           %td= link_to match.away_team.name, team_path(match.away_team)
-          -if can? :edit, Match
+          - if match.scores_present?
+            %td= "#{match.home_team_goals} : #{match.away_team_goals}"
+          - else
+            %td= "_ : _"
+          - if can? :edit, Match
             %td= link_to t('.edit'), edit_match_path(match), class: "btn btn-warning"
             %td= link_to t('.destroy'), match_path(match), method: :delete, data: { confirm: t('.confirmation') }, class: "btn btn-danger"
