@@ -18,7 +18,15 @@ class MatchesController < ApplicationController
   def update
     @match = Match.find(params[:id])
 
+    if @match.scores_present?
+      old_scores = @match.scores
+    end
+    update_policy = Match::UpdatePolicy.new(@match, old_scores)
+
     if @match.update(match_attributes)
+      if update_policy.result_changed?
+        Teams::TableUpdateService.update_points(@match)
+      end
       redirect_to '/matches'
     else
       render 'edit'

@@ -1,7 +1,7 @@
 .menu-nav
   %ul.nav.nav-pills
     %li{:role => "presentation",:class => "#{'active' if params[:controller] == 'table'}"}
-      %a{:href => "#"}
+      %a{:href => "/table"}
         =t '.table'
     %li{:role => "presentation", :class => "#{'active' if params[:controller] == 'matches'}"}
       %a{:href => "/matches"}

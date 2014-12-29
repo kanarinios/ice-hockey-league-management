@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   resources :matches
 
+  get 'table' => 'table#index'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

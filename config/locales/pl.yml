@@ -38,6 +38,7 @@ pl:
       matches_list: Lista meczów
       add_match: Dodaj nowy mecz
       edit: Edytuj
+      edit_match: Edytuj Mecz
       destroy: Usuń
       confirmation: Jestes pewien że chcesz usunąć mecz?
       home_team: Gospodarz
