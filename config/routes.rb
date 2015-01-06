@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
   root 'home#index'
   resources :teams
-
   resources :matches
+  resources :players
 
   get 'table' => 'table#index'
 

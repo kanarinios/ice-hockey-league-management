@@ -21,6 +21,7 @@ gem 'devise-bootstrap-views'
 gem "paperclip", "~> 4.2"
 gem 'momentjs-rails', '>= 2.8.1'
 gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
+gem 'country_select', github: 'stefanpenner/country_select'
 
 group :production do
 end

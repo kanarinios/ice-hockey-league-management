@@ -1,0 +1,19 @@
+%h2.show-team= @player.full_name
+.team-info
+  = image_tag @player.photo.url(:medium)
+  .team-details
+    = t('.last_name')
+    %h2= @player.last_name
+    %br
+    = t('.first_name')
+    %h2= @player.first_name
+    %br
+    = t('.age')
+    %h2= @player.age
+    %br
+    = t('.weight')
+    %h2= @player.weight
+    %br
+    = t('.height')
+    %h2= @player.height
+

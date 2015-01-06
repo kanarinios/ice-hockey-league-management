@@ -1,0 +1,9 @@
+= simple_form_for @player, :html => { :multipart => true } do |f|
+  .input-fields
+    = f.input :team_id, collection: Team.all, label: t('players.info.team')
+    = f.input :first_name, label: t('players.info.first_name')
+    = f.input :last_name, label: t('players.info.last_name')
+    = f.input :date_of_birth, as: :date_picker, label: t('players.info.date_of_birth')
+    = f.input :country, priority_countries: ["PL", "EN"], selected: "PL"
+    = f.file_field :logo
+    = f.button :submit, class: "btn btn-success"

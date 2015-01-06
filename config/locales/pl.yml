@@ -47,3 +47,19 @@ pl:
     edit_form:
       home_team_goals: "Bramki gospodarzy:"
       away_team_goals: "Bramki gości:"
+  players:
+    index:
+      players_list: Lista Zawodników
+      add_player: Dodaj nowego gracza
+      edit: Edytuj
+      destroy: Usuń
+      confirmation: Jestes pewien że chcesz usunąć zawodnika?
+    info:
+      team: Drużyna
+      date_of_birth: Data urodzin
+      first_name: Imię
+      last_name: Nazwisko
+
+    edit_form:
+      home_team_goals: "Bramki gospodarzy:"
+      away_team_goals: "Bramki gości:"

@@ -4,13 +4,13 @@
       %a{:href => "/table"}
         =t '.table'
     %li{:role => "presentation", :class => "#{'active' if params[:controller] == 'matches'}"}
-      %a{:href => "/matches"}
+      %a{:href => matches_path}
         =t '.timetable'
     %li{:role => "presentation", :class => "#{'active' if params[:controller] == 'teams'}"}
-      %a{:href => "/teams"}
+      %a{:href => teams_path}
         =t '.teams'
     %li{:role => "presentation", :class => "#{'active' if params[:controller] == 'players'}"}
-      %a{:href => "#"}
+      %a{:href => players_path}
         =t '.players'
     %li{:role => "presentation", :class => "#{'active' if params[:controller] == 'statistics'}"}
       %a{:href => "#"}

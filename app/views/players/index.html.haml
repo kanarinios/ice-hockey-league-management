@@ -1,0 +1,20 @@
+%h2.title= t('.players_list')
+- if can? :create, Player
+  = link_to t('.add_player'), new_player_path, class: "btn btn-success add-team"
+- if @players.present?
+  %table.table
+    %thead
+      %tr
+        %th=t('.name')
+        %th=t('.team')
+        - if can? :edit, Player
+          %th=t('.edit')
+          %th=t('.destroy')
+    - @players.each do |player|
+      %tbody
+        %tr
+          %td= link_to "#{player.first_name} #{player.last_name}", player_path(player)
+          %td= link_to player.team.name, team_path(player.team)
+          - if can? :edit, Player
+            %td= link_to t('.edit'), edit_player_path(player), class: "btn btn-warning"
+            %td= link_to t('.destroy'), player_path(player), method: :delete, data: { confirm: t('.confirmation') }, class: "btn btn-danger"

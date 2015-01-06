@@ -22,11 +22,11 @@ class Team < ActiveRecord::Base
     ended_matches.where("winner != ?", id).count
   end
 
-  private
-
   def ended_matches
     matches.where("home_team_goals IS NOT NULL AND away_team_goals IS NOT NULL")
   end
+
+  private
 
   def matches
     Match.where("home_team_id = ? OR away_team_id = ?", id, id)
