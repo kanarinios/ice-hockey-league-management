@@ -52,13 +52,15 @@ pl:
       players_list: Lista Zawodników
       add_player: Dodaj nowego gracza
       edit: Edytuj
+      edit_match: "Edycja %{player_name}"
       destroy: Usuń
       confirmation: Jestes pewien że chcesz usunąć zawodnika?
     info:
-      team: Drużyna
-      date_of_birth: Data urodzin
-      first_name: Imię
-      last_name: Nazwisko
+      team: "Drużyna:"
+      date_of_birth: "Data urodzin:"
+      first_name: "Imię:"
+      last_name: "Nazwisko:"
+      country: "Kraj:"
 
     edit_form:
       home_team_goals: "Bramki gospodarzy:"

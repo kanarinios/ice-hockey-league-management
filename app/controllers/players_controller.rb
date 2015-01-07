@@ -8,7 +8,8 @@ class PlayersController < ApplicationController
   end
 
   def edit
-    @player = Player.find(params[:id])
+    player = Player.find(params[:id])
+    @player = PlayerPresenter.new(player)
   end
 
   def show

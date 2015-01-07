@@ -11,11 +11,7 @@
           %span.caret
         %ul.dropdown-menu.dropdown-menu-right{:role => "menu"}
           %li
-            %a{:href => "#"} Action
-          %li
-            %a{:href => "#"} Another action
-          %li
-            %a{:href => "#"} Something else here
+            = link_to("Edit account", edit_user_registration_path)
         = link_to('Log out', destroy_user_session_path, :method => :delete, class: "button btn btn-primary navbar-btn user-btn")
       -else
         = link_to('Sign in', new_user_session_path, class: "button btn btn-default navbar-btn")

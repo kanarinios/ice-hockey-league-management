@@ -1,9 +1,0 @@
-= simple_form_for @match, :html => { :multipart => true } do |f|
-  .input-fields
-    = f.input :home_team_id, collection: Team.all, label: t('matches.index.home_team')
-    = f.input :away_team_id, collection: Team.all, label: t('matches.index.away_team')
-    = f.input :start_date, as: :datetime_picker, label: t('matches.index.date')
-    %h4= t('.match_results')
-    = f.input :home_team_goals, label: t('.home_team_goals')
-    = f.input :away_team_goals, label: t('.away_team_goals')
-    = f.button :submit, class: "btn btn-success"
