@@ -1,11 +1,15 @@
-class PlayersController < ApplicationController
+class StatisticsController < ApplicationController
+
   def index
-    @players = Player.all
+  end
+
+  def top_scorer
+    @players = Player.all.sort_by {|player| player.goals }.reverse
   end
 
   private
 
   def player_attributes
-    params[:player].permit(:first_name, :last_name, :date_of_birth, :weight, :height, :country, :team_id, :photo)
+    params[:player].permit(:first_name, :last_name, :team_id, :photo)
   end
 end

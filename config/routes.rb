@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   resources :scores
 
   get 'table' => 'table#index'
+  get 'statistics' => 'statistics#index'
+  get 'statistics/top_scorer' => 'statistics#top_scorer'
   get 'matches/:id/new_scores' => 'matches#new_scores'
   post 'matches/:id/new_scores' => 'matches#new_scores'
 

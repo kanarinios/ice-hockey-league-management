@@ -16,4 +16,9 @@ class Player < ActiveRecord::Base
   def full_name_with_team
     "#{full_name} (#{team.name})"
   end
+
+  #Funkcja #goals obliczająca bramki, powinna uwzględniać samobóje.TODO:
+  def goals
+    scores.count
+  end
 end

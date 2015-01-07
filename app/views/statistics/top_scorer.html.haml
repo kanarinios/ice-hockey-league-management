@@ -1,0 +1,18 @@
+%h2.title= t('.top_scorer')
+- if @players.present?
+  %table.table
+    %thead
+      %tr
+        %th=t('.lp')
+        %th=t('.photo')
+        %th=t('.name')
+        %th=t('.team')
+        %th=t('.goals')
+    - @players.each_with_index do |player, index|
+      %tbody
+        %tr
+          %td= index + 1
+          %td= image_tag player.photo.url(:icon)
+          %td= link_to "#{player.first_name} #{player.last_name}", player_path(player)
+          %td= link_to player.team.name, team_path(player.team)
+          %td= player.scores.count
