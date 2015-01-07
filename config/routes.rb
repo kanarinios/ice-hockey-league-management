@@ -6,8 +6,11 @@ Rails.application.routes.draw do
   resources :teams
   resources :matches
   resources :players
+  resources :scores
 
   get 'table' => 'table#index'
+  get 'matches/:id/new_scores' => 'matches#new_scores'
+  post 'matches/:id/new_scores' => 'matches#new_scores'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

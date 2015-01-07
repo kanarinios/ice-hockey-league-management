@@ -65,3 +65,8 @@ pl:
     edit_form:
       home_team_goals: "Bramki gospodarzy:"
       away_team_goals: "Bramki gości:"
+  scores:
+    new:
+      add_scores: "Dodaj strzelców bramek"
+      goal: "%{which} Bramka:"
+      goals_for: "Bramki dla %{team}:"
