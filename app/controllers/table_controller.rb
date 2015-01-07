@@ -1,5 +1,5 @@
 class TableController < ApplicationController
   def index
-    @teams = Team.order(points: :desc)
+    @teams = Team.all.sort_by {|team| team.points }.reverse
   end
 end

@@ -3,4 +3,8 @@ class Player < ActiveRecord::Base
 
   has_attached_file :photo, styles: { icon: "32x32>", medium: "300x300>" }, default_url: "/images/missing_:style.png"
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
+
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :team, presence: true
 end

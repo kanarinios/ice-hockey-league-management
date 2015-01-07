@@ -1,10 +1,12 @@
 class Team < ActiveRecord::Base
-  has_many :players
-  has_many :memberships
-  has_many :matches
+  has_many :players, dependent: :destroy
+  has_many :memberships, dependent: :destroy
+  has_many :matches, dependent: :destroy
 
   has_attached_file :logo, styles: { icon: "32x32>", medium: "300x300>" }, default_url: "/images/missing_:style.png"
   validates_attachment_content_type :logo, :content_type => /\Aimage\/.*\Z/
+
+  validates :name, presence: true
 
   def points
     3*wins + draws
