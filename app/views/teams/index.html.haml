@@ -5,14 +5,16 @@
   %table.table
     %thead
       %tr
-        -#%th=t('.logo')
+        %th=t('.logo')
         %th=t('.team_name')
-        %th=t('.edit')
-        %th=t('.destroy')
+        - if can? :edit, Team
+          %th=t('.edit')
+          %th=t('.destroy')
     - @teams.each do |team|
       %tbody
         %tr
-          -#%td= image_tag team.logo.url(:icon)
+          %td= image_tag team.logo.url(:icon)
           %td= link_to team.name, team_path(team)
-          %td= link_to t('.edit'), edit_team_path(team), class: "btn btn-warning"
-          %td= link_to t('.destroy'), team_path(team), method: :delete, data: { confirm: t('.confirmation') }, class: "btn btn-danger"
+          - if can? :edit, Team
+            %td= link_to t('.edit'), edit_team_path(team), class: "btn btn-warning"
+            %td= link_to t('.destroy'), team_path(team), method: :delete, data: { confirm: t('.confirmation') }, class: 'btn btn-danger'
