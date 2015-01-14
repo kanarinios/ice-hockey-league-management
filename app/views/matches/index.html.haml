@@ -15,7 +15,7 @@
     - @matches.each do |match|
       %tbody
         %tr
-          %td= match.start_date
+          %td= match.start_date.strftime('%Y-%m-%d %H:%M')
           %td= link_to match.home_team.name, team_path(match.home_team)
           %td= link_to match.away_team.name, team_path(match.away_team)
           - if match.scores_present?

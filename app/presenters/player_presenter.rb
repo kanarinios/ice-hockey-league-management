@@ -17,6 +17,6 @@ class PlayerPresenter < SimpleDelegator
   end
 
   def age
-    Date.today.year - player.date_of_birth.year
+    Date.today.year - player.date_of_birth.year if player.date_of_birth.present?
   end
 end

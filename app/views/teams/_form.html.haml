@@ -2,5 +2,5 @@
   .input-fields
     = f.input :name, label: t('.team_name')
     = f.input :description, label: t('.team_description')
-    = f.file_field :logo
-    = f.button :submit, class: "btn btn-success"
+    = f.input :logo, as: :file, label: t('team.index.logo')
+    = f.button :submit, t('teams.form.save'), class: "btn btn-success"

@@ -1,4 +1,27 @@
 pl:
+  activerecord:
+    errors:
+      models:
+        player:
+          attributes:
+            first_name:
+              blank: Imię nie może być puste
+            last_name:
+              blank: Nazwisko nie może być puste
+            team_id:
+              blank: Drużyna musi być wybrana
+        team:
+          attributes:
+            name:
+              blank: Nazwa nie może być puste
+        match:
+          attributes:
+            away_team_id:
+              blank: Drużyna musi zostać wybrana
+            home_team_id:
+              blank: Drużyna musi zostać wybrana
+            start_date:
+              blank: Data spotkania nie może być pusta
   datepicker:
     dateformat: '%d/%m/%Y'        # display format of the date (this is the default, can be ommited)
     pformat: 'DD/MM/YYYY'      # picking format of the date (this is the default, can be ommited)
@@ -13,6 +36,11 @@ pl:
       teams: Drużyny
       players: Zawodnicy
       statistics: Statystyki
+    navigation:
+      sign_in: Zaloguj się
+      log_out: Wyloguj się
+      edit_account: Edytuj konto
+
   home:
     navigation:
       app_title: IHLM
@@ -30,6 +58,7 @@ pl:
     form:
       team_name: Nazwa drużyny
       team_description: Opis
+      save: Zapisz
     show:
       name: "Nazwa:"
       description: "Opis:"
@@ -44,6 +73,7 @@ pl:
       home_team: Gospodarz
       away_team: Gość
       date: Data spotkania
+      result: Wynik
     edit_form:
       home_team_goals: "Bramki gospodarzy:"
       away_team_goals: "Bramki gości:"
@@ -54,6 +84,9 @@ pl:
       edit: Edytuj
       edit_match: "Edycja %{player_name}"
       destroy: Usuń
+      photo: "Zdjęcie"
+      name: Imię i nazwisko
+      team: Drużyna
       confirmation: Jestes pewien że chcesz usunąć zawodnika?
     info:
       team: "Drużyna:"
@@ -61,10 +94,30 @@ pl:
       first_name: "Imię:"
       last_name: "Nazwisko:"
       country: "Kraj:"
-
+      photo: "Zdjęcie:"
+      age: "Wiek:"
+      weight: "Waga:"
+      height: "Wzrost: "
+      save: Zapisz
     edit_form:
       home_team_goals: "Bramki gospodarzy:"
       away_team_goals: "Bramki gości:"
+  table:
+    index:
+      team_name: Nazwa drużyny
+      matches: Rozegrane mecze
+      points: Punkty
+      lp: Lp
+  statistics:
+    index:
+      top_scorer: Król strzelców
+    top_scorer:
+      title: Król strzelców
+      lp: Lp
+      photo: Zdjęcie
+      name: Imię Nazwisko
+      team: Drużyna
+      goals: Bramki
   scores:
     new:
       add_scores: "Dodaj strzelców bramek"

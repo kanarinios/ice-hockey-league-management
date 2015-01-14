@@ -2,18 +2,18 @@
 .team-info
   = image_tag @player.photo.url(:medium)
   .team-details
-    = t('.last_name')
+    = t('players.info..last_name')
     %h2= @player.last_name
     %br
-    = t('.first_name')
+    = t('players.info.first_name')
     %h2= @player.first_name
     %br
-    = t('.age')
+    = t('players.info.age')
     %h2= @player.age
     %br
-    = t('.weight')
+    = t('players.info.weight')
     %h2= @player.weight
     %br
-    = t('.height')
+    = t('players.info.height')
     %h2= @player.height
 

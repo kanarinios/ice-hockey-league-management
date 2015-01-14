@@ -3,8 +3,9 @@ class Match < ActiveRecord::Base
   belongs_to :away_team, class_name:"Team"
   has_many :scores, dependent: :destroy
 
-  validates :away_team, presence: true
-  validates :home_team, presence: true
+  validates :away_team_id, presence: true
+  validates :home_team_id, presence: true
+  validates :start_date, presence: true
 
   accepts_nested_attributes_for :scores
 
