@@ -1,4 +1,5 @@
 - if @teams.present?
+  %h2.title= t(".table")
   %table.table
     %thead
       %tr
@@ -13,3 +14,6 @@
           %td= link_to team.name, team_path(team)
           %td= team.ended_matches.count
           %td= team.points
+- else
+  %h2.title= t('.no_teams')
+  = link_to t('teams.index.add_team'), new_team_path, class: "btn btn-success add-team"

@@ -1,6 +1,10 @@
 class MatchesController < ApplicationController
   def index
-    @matches = Match.all
+    if params[:query].present?
+      @matches = Match.search(params[:query])
+    else
+      @matches = Match.all
+    end
   end
 
   def new
@@ -41,11 +45,14 @@ class MatchesController < ApplicationController
         scores.each do |score|
           Score.create(match_id: @match.id, player_id: score[1][:player_id])
         end
+        flash[:success] = t(".player_scores_success")
         redirect_to '/matches'
       else
+        flash[:success] = t(".score_success")
         redirect_to new_score_path(match_id: @match.id)
       end
     else
+      flash.now[:error] = t(".score_error")
       render 'edit'
     end
   end
@@ -54,15 +61,21 @@ class MatchesController < ApplicationController
     @match = Match.new(match_attributes)
 
     if @match.save
+      flash[:success] = t(".success")
       redirect_to '/matches'
     else
+      flash.now[:error] = t(".error")
       render 'new'
     end
   end
 
    def destroy
     @match = Match.find(params[:id])
-    @match.destroy
+    if @match.destroy
+      flash[:success] = t(".success")
+    else
+      flash[:error] = t(".error")
+    end
 
     redirect_to matches_path
   end
@@ -70,6 +83,6 @@ class MatchesController < ApplicationController
   private
 
   def match_attributes
-    params[:match].permit(:start_date, :home_team_id, :away_team_id, :home_team_goals, :away_team_goals)
+    params[:match].permit(:start_date, :home_team_id, :away_team_id, :home_team_goals, :away_team_goals, :play_off, :penalities)
   end
 end

@@ -1,2 +1,5 @@
-%h2.add-new= t('players.index.add_player')
-= render "form"
+- if Team.exists?
+  %h2.add-new= t('players.index.add_player')
+  = render "form"
+- else
+  - flash.now[:alert] = t(".add_team")

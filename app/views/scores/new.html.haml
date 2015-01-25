@@ -1,8 +1,8 @@
-%h2= "#{@match.home_team.name}   #{@match.home_team_goals} : #{@match.away_team_goals}   #{@match.away_team.name}"
-%h2= t(".add_scores")
+%h2.add-new= "#{@match.home_team.name}   #{@match.home_team_goals} : #{@match.away_team_goals}   #{@match.away_team.name}"
+%h2.add-new= t(".add_scores")
 - if @match.home_team_goals.present?
   = simple_form_for @match do |f|
     = f.fields_for :scores do |s|
       .input-fields
         = s.association :player, collection: @match.players, label: t('.goal', which: s.index + 1), label_method: :full_name_with_team
-    = f.button :submit, class: "btn btn-success"
+    = f.button :submit, t(".add_scores"), class: "btn btn-success add-team"

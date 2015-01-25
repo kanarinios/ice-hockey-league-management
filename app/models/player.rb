@@ -9,6 +9,14 @@ class Player < ActiveRecord::Base
   validates :last_name, presence: true
   validates :team_id, presence: true
 
+  searchkick
+
+  def search_data
+    {
+      team: team(&:name)
+    }
+  end
+
   def full_name
     "#{first_name} #{last_name}"
   end

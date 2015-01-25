@@ -1,6 +1,8 @@
 pl:
   activerecord:
     errors:
+      messages:
+        record_invalid: "Record invalid"
       models:
         player:
           attributes:
@@ -13,13 +15,17 @@ pl:
         team:
           attributes:
             name:
-              blank: Nazwa nie może być puste
+              blank: Nazwa drużynie nie może być pusta
         match:
           attributes:
             away_team_id:
               blank: Drużyna musi zostać wybrana
             home_team_id:
               blank: Drużyna musi zostać wybrana
+            away_team_goals:
+              blank: Bramki muszą zostać wprowadzone
+            home_team_goals:
+              blank: Bramki muszą zostać wprowadzone
             start_date:
               blank: Data spotkania nie może być pusta
   datepicker:
@@ -36,7 +42,7 @@ pl:
       teams: Drużyny
       players: Zawodnicy
       statistics: Statystyki
-    navigation:
+    login_buttons:
       sign_in: Zaloguj się
       log_out: Wyloguj się
       edit_account: Edytuj konto
@@ -62,7 +68,23 @@ pl:
     show:
       name: "Nazwa:"
       description: "Opis:"
+    create:
+      success: "Pomyślnie zapisano drużynę"
+      error: "Wystąpił problem podczas zapisywania drużyny"
+    destroy:
+      success: "Pomyślnie usunięto drużynę"
+      error: "Wystąpił problem podczas usuwania drużyny"
+    update:
+      success: "Pomyślnie zapisano drużynę"
+      error: "Wystąpił problem podczas zapisywania drużyny"
   matches:
+    create:
+      error: "Wystąpił problem podczas zapisywania meczu"
+      success: "Pomyślnie dodano spotkanie"
+    update:
+      player_scores_success: "Pomyślnie zapisano strzelców"
+      score_success: "Pomyślnie zapisano wynik spotkania"
+      score_error: "Wystąpił błąd podczas zapisywania wyniku spotkania"
     index:
       matches_list: Lista meczów
       add_match: Dodaj nowy mecz
@@ -79,6 +101,17 @@ pl:
       away_team_goals: "Bramki gości:"
       match_results: "Wynik spotkania:"
   players:
+    create:
+      success: "Pomyślnie zapisano zawodnika"
+      error: "Wystąpił problem podczas zapisywania zawodnika"
+    destroy:
+      success: "Pomyślnie usunięto zawodnika"
+      error: "Wystąpił problem podczas usuwania zawodnika"
+    update:
+      success: "Pomyślnie zapisano zawodnika"
+      error: "Wystąpił problem podczas zapisywania zawodnika"
+    new:
+      add_team: Brak drużyn w systemie. Wprowadź najpierw drużynę aby dodać zawodnika
     index:
       players_list: Lista Zawodników
       add_player: Dodaj nowego gracza
@@ -105,12 +138,15 @@ pl:
       away_team_goals: "Bramki gości:"
   table:
     index:
+      no_teams: Brak drużyn w systemie
+      table: Tabela punktowa
       team_name: Nazwa drużyny
       matches: Rozegrane mecze
       points: Punkty
       lp: Lp
   statistics:
     index:
+      statistics: Statystyki ligowe
       top_scorer: Król strzelców
     top_scorer:
       title: Król strzelców

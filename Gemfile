@@ -22,6 +22,7 @@ gem "paperclip", "~> 4.2"
 gem 'momentjs-rails', '>= 2.8.1'
 gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
 gem 'country_select', github: 'stefanpenner/country_select'
+gem 'searchkick'
 
 group :production do
 end
@@ -29,6 +30,7 @@ end
 group :development do
   gem 'spring'
   gem 'erb2haml'
+  gem 'railroady'
 
 end
 

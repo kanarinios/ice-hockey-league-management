@@ -6,4 +6,6 @@
     %h4= t('.match_results')
     = f.input :home_team_goals, label: t('.home_team_goals')
     = f.input :away_team_goals, label: t('.away_team_goals')
+    = f.input :play_off, as: :boolean, label: t('.dogrywka')
+    = f.input :penalities, as: :boolean, label: t('.karne')
     = f.button :submit, t('players.info.save'), class: "btn btn-success"

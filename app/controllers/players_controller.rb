@@ -1,6 +1,10 @@
 class PlayersController < ApplicationController
   def index
-    @players = Player.all
+    if params[:query].present?
+      @players = Player.search(params[:query])
+    else
+      @players = Player.all
+    end
   end
 
   def new
@@ -21,8 +25,10 @@ class PlayersController < ApplicationController
     @player = Player.find(params[:id])
 
     if @player.update(player_attributes)
+      flash[:success] = t(".success")
       redirect_to '/players'
     else
+      flash.now[:error] = t(".error")
       render 'edit'
     end
   end
@@ -31,15 +37,21 @@ class PlayersController < ApplicationController
     @player = Player.new(player_attributes)
 
     if @player.save
+      flash[:success] = t(".success")
       redirect_to '/players'
     else
+      flash.now[:error] = t(".error")
       render 'new'
     end
   end
 
    def destroy
     @player = Player.find(params[:id])
-    @player.destroy
+    if @player.destroy
+      flash[:success] = t(".success")
+    else
+      flash.now[:error] = t(".error")
+    end
 
     redirect_to players_path
   end

@@ -2,6 +2,12 @@
 -if can? :create, Team
   = link_to t('.add_team'), new_team_path, class: "btn btn-success add-team"
 - if @teams.present?
+  = form_tag teams_path, class: "form-inline", method: :get do
+    .search-new-form
+      = text_field_tag :query, params[:query], class: "form-control", "placeholder" => "Podaj nazwę drużyny"
+      = submit_tag "Szukaj", class: "btn btn-default"
+      - if params[:query].present?
+        = link_to "Pokaż wszystkie", teams_path, class: "btn btn-info"
   %table.table
     %thead
       %tr

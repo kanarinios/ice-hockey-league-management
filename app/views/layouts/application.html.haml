@@ -7,4 +7,6 @@
     = csrf_meta_tags
     = render "layouts/navigation"
   %body
-    = yield
+    .main-app
+      = flash_messages
+      = yield

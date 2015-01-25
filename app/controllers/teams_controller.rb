@@ -1,7 +1,11 @@
 class TeamsController < ApplicationController
 
   def index
-    @teams = Team.all
+    if params[:query].present?
+      @teams = Team.search(params[:query])
+    else
+      @teams = Team.all
+    end
   end
 
   def new
@@ -20,9 +24,11 @@ class TeamsController < ApplicationController
     @team = Team.find(params[:id])
 
     if @team.update(team_attributes)
-      redirect_to '/teams'
+      flash[:success] = t(".success")
+      redirect_to teams_path
     else
-      render 'edit'
+      flash[:error] = t(".error")
+      render edit_teams_path
     end
   end
 
@@ -30,16 +36,21 @@ class TeamsController < ApplicationController
     @team = Team.new(team_attributes)
 
     if @team.save
-      redirect_to '/teams'
+      flash[:success] = t(".success")
+      redirect_to teams_path
     else
-      render 'new'
+      flash[:error] = t(".error")
+      render new_team_path
     end
   end
 
    def destroy
     @team = Team.find(params[:id])
-    @team.destroy
-
+    if @team.destroy
+      flash[:success] = t(".success")
+    else
+      flash[:error] = t(".error")
+    end
     redirect_to teams_path
   end
 
